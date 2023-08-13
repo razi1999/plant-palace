@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 aside">
+            <h3>Categories</h3>
+            <hr />
+            <ul>
+                <li><a [routerLink]="['/category', 'indoor']">In-door Plants</a></li>
+                <li><a [routerLink]="['/category', 'outdoor']">Out-door Plants</a></li>
+                <li><a [routerLink]="['/category', 'flowered']">Flowering Plants</a></li>
+            </ul>
+            <hr />
+
+            <h4>Price range</h4>
+            <button (click)="sortByPrice('ascbtn')">Low to High</button>
+            <button (click)="sortByPrice('dscbtn')">High to Low</button>
+
+            <h4 style="margin-top: 2%;">By Name</h4>
+            <button (click)="sortByName('ascbtn')">A-Z</button>
+            <button (click)="sortByName('dscbtn')">Z-A</button>
+
+
+            <hr />
+
+            <h5>Sunlight Plants</h5>
+              <input type="radio" id="all" name="fav_language" value="ALL" checked (click)="applySunlightFilter('ALL')">
+              <label for="all">All</label><br>
+              <input type="radio" id="yes" name="fav_language" value="YES" (click)="applySunlightFilter('YES')">
+              <label for="yes">Yes</label><br>
+              <input type="radio" id="no" name="fav_language" value="NO" (click)="applySunlightFilter('NO')">
+              <label for="no">No</label>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-9 mt-3">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4" *ngFor="let key of plants">
+                    <div class="card" style="margin-top: 4%;">
+                        <img [src]="key.img1" alt="Title" class="card-img-top my-2">
+                        <div class="card-body">
+                            <h4 class="card-title"> {{key.commonname | uppercase}}</h4>
+                            <p class="card-text"><strong>Description:</strong> {{key.des}}</p>
+                            <p class="card-text"><strong>Uses:</strong> {{key.uses}}</p>
+                            <p class="card-text"><strong>Bloom Time:</strong> {{key.bloomtime}}</p>
+                            <p class="card-text"><strong>Price:</strong> {{key.price}}</p>
+                            <a [routerLink]="['/detail', title, key.id]" class="btn btn-primary" style="margin-left: -2%; background-color: green;">More Details</a>
+                            <a (click)="addToCart(key)" [routerLink]="['/', 'cart']" class="btn btn-primary" style="margin-left: 2%; background-color: green;">Add To Cart</a>
+                            <!-- <a (click)="addToCart(key)" [routerLink]="['/', 'cart']"><i class="fa fa-plus"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

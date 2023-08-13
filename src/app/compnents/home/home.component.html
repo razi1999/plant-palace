@@ -1,0 +1,143 @@
+<div>
+    <app-home-caousel></app-home-caousel>
+</div>
+<br>
+<!-- indoor -->
+<h1>Indoor Plants</h1>
+<a [routerLink]="['category', 'indoor']" class="view">view all</a>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Indoor Plants/Aglaonema/aglaonema1.jpg">
+                    <div class="overlay-text">Aglaonema</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Indoor Plants/Araucaria/Araucaria1.jpg">
+                    <div class="overlay-text">Araucaria</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Indoor Plants/Arica palm/Arecapalm1.jpg">
+                    <div class="overlay-text">Arica Palm</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Indoor Plants/Butterfly Ficcus/Butterfly ficcus1.jpg">
+                    <div class="overlay-text">Butterfly Ficcus</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- outdoor -->
+<h1>Outdoor Plants</h1>
+<a [routerLink]="['category', 'outdoor']" class="view">view all</a>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Outdoor Plants/Bismarckia Palm/bismarckia-Palm1.jpg">
+                    <div class="overlay-text">Bismarckia</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Outdoor Plants/Cassia fistula/cassia-fistula1.jpg">
+                    <div class="overlay-text">Cassia Fistula</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Outdoor Plants/dioon mejiae/dioon-mejiae1.jpg">
+                    <div class="overlay-text">Dioon Mejiae</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Outdoor Plants/Grafted Cactus/grafted-cactus1.jpg">
+                    <div class="overlay-text">Grafted Cactus</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- flowered -->
+<h1>Flowering Plants</h1>
+<a [routerLink]="['category', 'flowered']" class="view">view all</a>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Flowering Plants/adenium/adenium1.jpg">
+                    <div class="overlay-text">Adenium</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Flowering Plants/anthurium/anthurium1.jpg">
+                    <div class="overlay-text">Anthurium</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Flowering Plants/jasmine/jasmine1.webp">
+                    <div class="overlay-text">Jasmine</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="../../../assets/images/PlantPalace/Flowering Plants/pansy/pansy1.jpg">
+                    <div class="overlay-text">Pansy</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<h1 style="color: rgb(27, 73, 1);">Featured Plants</h1>
+<hr>
+<div class="slider">
+    <div class="slide-track">
+        <div class="slide" *ngFor="let plant of plants">
+            <a [routerLink]="['detail', 'indoor', plant.id]">
+                <img [src]="plant.img3" alt="">
+                <p>{{plant.commonname}} Rs.({{plant.price}})</p>
+
+            </a>
+        </div>
+    </div>
+</div>

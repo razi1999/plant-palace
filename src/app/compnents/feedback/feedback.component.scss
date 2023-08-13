@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif;   
+   }
+   body{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+       padding: 40px;
+   }
+   .container{
+       background-color: #fff;
+       width: 100%;
+       max-width: 800px;
+       padding: 25px 40px 10px 40px;
+       box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+       margin-top: 2%;
+       margin-left: 2%;
+   
+   }
+   .container .text{
+       font-size: 35px;
+       font-weight: 600;
+       text-align: center;
+       background: green;
+      -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+   
+   }
+   .container form{
+       padding: 30px 0 0 0 0;
+       height: 50vh;
+   
+   }
+   .container form .form-row{
+       display: flex;
+       margin: 32px 0;
+   }
+   form .form-row .input-data{
+       width: 100%;
+       height: 40px;
+       margin: 0 20px;
+       position: relative;
+   }
+   form .form-row .textarea{
+       height: 70px;
+   }
+   .input-data input,
+   .textarea textarea{
+       display: block;
+       height: 100%;
+       width: 100%;
+       border: none;
+       border-bottom: 2px solid rgba(0,0,0,0.12);
+   }
+   .input-data label{
+       position: absolute;
+       bottom: 10px;
+       font-size: 16px;
+       pointer-events: none;
+       transition: all 0.3s ease;
+   }
+   .input-data input:focus  ~ label,
+    .textarea textarea:focus ~ label
+    .input-data input:valid  ~ label,
+    .textarea textarea:valid ~ label{
+    transform: translateY(-20px);
+    color: #3498db;
+    font-size: 14px;
+   }
+   .textarea textarea{
+       resize: none;
+       padding-top: 10px;
+   }
+   .textarea label{
+       width: 100%;
+       bottom: 40px;
+       background: #fff;
+   }
+   .input-data .underline{
+       position: absolute;
+       bottom: 0;
+       height: 2px;
+       width: 100%;
+      
+   }
+   .input-data .underline:before,
+   .input-data .underline:after{
+       position: absolute;
+       content: "";
+       height: 100%;
+       width: 100%;
+       background: #3498db;
+       transform: scaleX(0);
+       transform-origin: center;
+       transition: transform 0.3s ease;
+   }
+   .input-data input:focus  ~ .underline:before,.underline:after,
+    .textarea textarea:focus ~ .underline:before,.underline:after,
+    .input-data input:valid  ~ .underline:before,.underline:after,
+    .textarea textarea:valid ~ .underline:before,.underline:after{
+    transform: scaleX(1);
+   
+   }
+//    style="float: right; border: 2px solid rgb(14, 68, 0); background-color: azure; width: 100%;"
+   button{
+    width: 100%;
+    background-color: green;
+    color: rgb(255, 255, 255);
+    height: 5vh;
+   }
+   button:hover{
+    background-color: green;
+    color: rgb(0, 0, 0);
+   }

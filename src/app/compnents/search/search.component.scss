@@ -1,0 +1,41 @@
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card img {
+    height: 40vh;
+}
+
+strong {
+    color: rgb(27, 73, 1);
+}
+
+.aside {
+    margin-top: 3%;
+}
+
+li a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+#input {
+    width: 50%;
+}
+
+button {
+    height: 30px;
+    width: 50%;
+    border: 1px solid;
+    border-radius: 15px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.btn-primary{
+    border: 1px solid black;
+  }

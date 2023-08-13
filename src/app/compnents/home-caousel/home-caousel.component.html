@@ -1,0 +1,11 @@
+<div style="margin-top: -0.6%;">
+    <ngb-carousel>
+        <ng-container *ngFor="let plant of plants">
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="plant.img1" [alt]="plant.commonname" />
+                </div>
+            </ng-template>
+        </ng-container>
+    </ngb-carousel>
+</div>

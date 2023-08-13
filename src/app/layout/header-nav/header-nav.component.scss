@@ -1,0 +1,18 @@
+
+.navi{
+    background-color: rgb(1, 94, 1); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, green , rgb(149, 255, 122));
+    justify-content: space-between;
+    font-family: 'serif';
+}
+button{
+    color: black;
+    border: none;
+}
+button:hover{
+    border: none;
+    color: darkgreen;
+}
+.drop{
+background-color: rgb(255, 255, 255);
+}

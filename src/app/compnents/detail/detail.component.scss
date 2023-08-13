@@ -1,0 +1,44 @@
+
+.gallery-img {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    width: 80%;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1);
+}
+
+.gallery-container {
+    height: 75vh;
+}
+
+.lightbox {
+    height: 75vh;
+    margin-left: -15%;
+    margin-top: 10px;
+}
+.lightbox img{
+    height: 75vh;
+    width: 100%;
+}
+
+.gallery-images {
+    height: 80vh;
+    padding-right: 15px;
+    margin-bottom: 20%;
+}
+
+.gallery-images img {
+    height: 20vh;
+    margin-top: 15%;
+}
+
+h2 {
+    font-family: constantia;
+    color: rgb(0, 0, 88);
+    margin-top: 5%;
+}
+.btn-primary:hover{
+    font-weight: bold;
+}

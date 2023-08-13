@@ -1,0 +1,65 @@
+<!-- <div class="topnav">
+    <p>Welcome To PlantPalace</p>
+</div>
+<div class="page-header">
+    <section class="log">
+        <a href="#"><img src="assets/logo.png" alt="logo" class="logo"></a>
+        <h1><a href="#">PlantPalace</a></h1>
+    </section>
+    <div class="search-cart-register">
+        <div class="search-bar">
+            <input type="text" id="searchField" #searchField placeholder="Search..."
+                (keyup.enter)="search(searchField.value)">
+            <button id="search-button" (click)="search(searchField.value)"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="cart-icon">
+            <a [routerLink]="['/','cart']"><i class="fa fa-shopping-cart"></i></a>
+        </div>
+        <div class="register-button">
+            <a [routerLink]="['/','register']">Register</a>
+        </div>
+    </div>
+</div>
+
+<app-header-nav></app-header-nav> -->
+
+
+
+
+<div class="row topnav">
+    <p>Welcome To PlantPalace</p>
+</div>
+<div class="row page-header">
+    <div class="log col-lg-4 col-md-6 col-sm-4 col-xs-4">
+        <a routerLink="/"><img src="assets/logo.png" alt="logo" class="logo"></a>
+        <h1><a routerLink="/">PlantPalace</a></h1>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4" *ngIf="!isResponsive">
+        <div class="search-bar w-100">
+            <input class="w-100 searchBox" type="text" id="searchField" #searchField placeholder="Search..."
+                (keyup.enter)="search(searchField.value)">
+            <button id="search-button" (click)="search(searchField.value)" class="btn btn-primary"><p style="margin-top: -4px;">Search</p></button>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4 d-flex" style="justify-content: right;"
+        [ngStyle]="{'margin-top':isBelow?'-40px': '0px'}">
+        <div class="cart-icon">
+            <a class="btn btn-warn" style="font-size: larger;" [routerLink]="['/','cart']"><i
+                    class="fa fa-shopping-cart"></i></a>
+        </div>
+        <div class="register-button">
+            <button class="btn btn-info" style="background-color: green;"><a [routerLink]="['/','register']">Register</a></button>
+        </div>
+    </div>
+    <div class="col-12 mt-2" *ngIf="isResponsive">
+        <div class="search-bar w-100">
+            <input class="w-100" type="text" id="searchField" #searchField placeholder="Search..."
+                (keyup.enter)="search(searchField.value)">
+            <button id="search-button" (click)="search(searchField.value)"><p style="margin-top: -2px;">Search</p></button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <app-header-nav></app-header-nav>
+</div>

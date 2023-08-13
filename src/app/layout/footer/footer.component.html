@@ -1,0 +1,39 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>PLANT PALACE</h4>
+                <ul>
+                    <li><a routerLink="/" target="_top">Home</a></li>
+                    <li><a routerLink="gallery">Gellery</a></li>
+                    <li><a routerLink="blog">About Us</a></li>
+                    <li><a routerLink="contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CATEGORIES</h4>
+                <ul>
+                    <li><a [routerLink]="['category','indoor']">Indoor Plants</a></li>
+                    <li><a [routerLink]="['category','outdoor']">Outdoor Plants</a></li>
+                    <li><a [routerLink]="['category','flowered']">Flowering Plants</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <!-- <h4>FORMS</h4> -->
+                <ul style="margin-top: 20%;">
+                    <li><a [routerLink]="['/','register']">Register</a></li>
+                    <li><a [routerLink]="['/','login']">Login</a></li>
+                    <li><a routerLink="feedback">Feedbeck</a></li>
+                    <li><a routerLink="sitemap">SiteMap</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61550028626041" target="_blank"><i class="fa fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/plantpalace321/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

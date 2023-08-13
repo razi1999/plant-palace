@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Flowered Plant 1",
+        "description": "desc 1",
+        "price": 1250,
+        "image": "assets/logo.png"
+    },
+    {
+        "id": 2,
+        "name": "Flowered Plant 2",
+        "description": "desc 2",
+        "price": 1050,
+        "image": "assets/logo.png"
+    },
+    {
+        "id": 3,
+        "name": "Flowered Plant 3",
+        "description": "desc 3",
+        "price": 550,
+        "image": "assets/logo.png"
+    }
+]

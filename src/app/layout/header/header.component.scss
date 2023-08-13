@@ -1,0 +1,130 @@
+.topnav {
+    background-color: rgb(1, 94, 1);
+    background-image: linear-gradient(to right, green, rgb(149, 255, 122));
+    color: rgb(12, 58, 0);
+    font-weight: 600;
+    font-family: monospace;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: 7vh;
+    margin-left: 10%;
+}
+
+.log {
+    display: flex;
+}
+
+.page-header {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-top: -1.2%;
+    display: flex;
+    align-items: center;
+    /* Centers items vertically */
+    justify-content: space-between;
+    padding: 10px;
+    /* Add some padding for spacing */
+}
+
+.page-header h1 a {
+    text-decoration: none;
+    color: rgb(27, 73, 1);
+    margin-left: 10px;
+    font-family: 'Times New Roman';
+}
+
+.page-header h1 a:hover {
+    text-decoration: none;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search bar, cart icon, and register button */
+.search-cart-register {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+
+}
+
+input {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.search-bar {
+    position: relative;
+}
+
+#search-field {
+    padding: 8px;
+}
+
+
+#search-button {
+    position: absolute;
+    border: none;
+    border-radius: none;
+    top: 50%;
+    right: -1px;
+    height: 4.5vh;
+    transform: translateY(-50%);
+    background-color: green;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    color: rgb(0, 0, 0);
+}
+
+.cart-icon,
+.register-button {
+    margin-left: 15px;
+}
+
+.register-button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.register-button a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-field {
+        width: 100%;
+    }
+
+    #search-button {
+        right: 1px;
+        color: white;
+        text-align: center;
+    }
+
+    .cart-icon,
+    .register-button {
+        margin-left: 10px;
+    }
+}
+
+.searchBox:click {
+    border: none;
+}
+
+.searchBox:focus {
+    border: none;
+}

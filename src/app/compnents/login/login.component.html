@@ -1,0 +1,36 @@
+<div class="center">
+    <h1>Login</h1>
+    <form [formGroup]="form">
+        <div class="text-field">
+            <input id="name" type="text" formControlName="name">
+            <span></span>
+            <label for="name">Username</label>
+            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="validation-error">
+                <div *ngIf="name?.errors?.['required']">
+                    Username is required.
+                </div>
+                <div *ngIf="name?.errors?.['pattern']">
+                    Username must include letters only.
+                </div>
+            </div>
+        </div>
+        <div class="text-field">
+            <input id="passw" type="password" formControlName="password">
+            <span></span>
+            <label for="passw">Password</label>
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="validation-error">
+                <div *ngIf="password?.errors?.['required']">
+                    Password is required.
+                </div>
+                <div *ngIf="password?.errors?.['pattern']">
+                    Password must be at least 6 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="pass">Forgot Password...</div>
+        <input type="submit" value="Login" (click)="submit()" />
+        <div class="signup">
+            Not a Member? <a [routerLink]="['/','register']">Sign Up</a>
+        </div>
+    </form>
+</div>

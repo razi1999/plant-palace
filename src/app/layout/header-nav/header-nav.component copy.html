@@ -1,0 +1,29 @@
+<div class="navi">
+<ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs justify-content-center">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink (click)="navClick(1)" routerLink="/">Home</button>
+	</li>
+	<li [ngbNavItem]="2">
+		<button ngbNavLink (click)="navClick(2)" routerLink="gallery">Gallery</button>
+	</li>
+	<li ngbDropdown class="nav-item" role="presentation" [ngbNavItem]="3">
+		<button type="button" class="nav-link" ngbDropdownToggle>Categories</button>
+		<div ngbDropdownMenu class="drop">
+			<button ngbDropdownItem (click)="navClick(3)" [routerLink]="['category','indoor']">Indoor Plants</button>
+			<button ngbDropdownItem (click)="navClick(3)" [routerLink]="['category','outdoor']">Outdoor Plants</button>
+			<button ngbDropdownItem (click)="navClick(3)" [routerLink]="['category','flowered']">Flowering Plants</button>
+		</div>
+	</li>
+
+	<li [ngbNavItem]="4">
+		<button ngbNavLink (click)="navClick(4)" routerLink="blog">About Us</button>
+	</li>
+	<li [ngbNavItem]="5">
+		<button ngbNavLink (click)="navClick(5)" routerLink="contact">Contact Us</button>
+	</li>
+	<li [ngbNavItem]="6">
+		<button ngbNavLink (click)="navClick(6)" routerLink="feedback">Feedback</button>
+	</li>
+</ul>
+</div>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

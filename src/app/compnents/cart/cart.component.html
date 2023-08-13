@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-lg-9"></div>
+    <div class="col-lg-3">
+        <a id="addbtn" class="btn btn-primary" (click)="open(content)">Checkout</a>
+        <p class="card-text"><strong>Price:</strong> {{getTotal()}}</p>
+    </div>
+</div>
+
+<div class="row" *ngFor="let key of plants">
+    <div class="col-lg-12 mt-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="{{key.img1}}" alt="Title" class="card-img-top my-2">
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="card-title"> {{key.commonname}}</h4>
+                        <!-- <p class="card-text"><strong>Description:</strong> {{key.des}}</p> -->
+                        <!-- <p class="card-text"><strong>Bloom Time:</strong> {{key.bloomtime}}</p> -->
+                        <p class="card-text"><strong>Price:</strong> {{key.price}}</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" name="quantity" id="quantity" #quantity min="1" [(ngModel)]="key.quantity"
+                            (change)="key.totalPrice = (key.price  * (key.quantity? key.quantity:1))">
+                    </div>
+                    <div class="col-lg-3">
+
+                        <div class="row">
+                            <p class="card-text"><strong>Total Price:</strong> {{key.totalPrice}}</p>
+                        </div>
+
+                        <div class="row cart-icon">
+                            <a (click)="removeFromCart(key)"><i class="fa fa-trash"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- <a id="addbtn" class="btn btn-primary">Add to Cart</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thank You for Shopping!</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click'); clearCart();"
+            routerLink="/"></button>
+    </div>
+    <div class="modal-body">
+        <p>Your order will delivered within 10 working days. We are thankful to you for choosing us to provide your
+            desired plants.</p>
+    </div>
+</ng-template>

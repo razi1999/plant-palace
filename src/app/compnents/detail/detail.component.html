@@ -1,0 +1,32 @@
+<div class="container-fluid" style="background-color: rgba(214, 213, 213, 0.5)">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 col-md-2">
+            <div class="gallery-images">
+                <img [src]="plant.img1" alt="Gallery image 1" data-mdb-img="plant.img1"
+                    class="gallery-img img-responsive active" (click)="selectedImage = plant.img1" />
+                <img [src]="plant.img2" alt="Gallery image 2" data-mdb-img="images/bric's/h1-1.jpg"
+                    class="gallery-img img-responsive" (click)="selectedImage = plant.img2" />
+                <img [src]="plant.img3" alt="Gallery image 3" data-mdb-img="images/bric's/h1-2.jpg"
+                    class="gallery-img img-responsive" (click)="selectedImage = plant.img3" />
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-4 col-md-4">
+            <div class="ecommerce-gallery gallery-container">
+                <div class="lightbox">
+                    <img id="main-img" [src]="selectedImage" alt="Gallery image"
+                        class="ecommerce-gallery-main-img active img-responsive" />
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h2>{{plant.commonname | uppercase}}</h2>
+            <br>
+            <h3 style="color: black;">Rs. {{plant.price}}</h3>
+            <br>
+            <h3 style="font-family: constantia; color: rgb(0, 0, 88);">Description</h3>
+            <p style="text-align: justify;">{{plant.des}}</p>
+            <button  class="btn btn-primary" style="background-color: green; width: 40%; margin-bottom: 2%;" (click)="addToCart(plant)" [routerLink]="['/','cart']"><a>Add to
+                    Cart</a></button>
+        </div>
+    </div>
+</div>
