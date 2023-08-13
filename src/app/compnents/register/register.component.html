@@ -38,7 +38,7 @@
       <div *ngIf="isSubmitted || (confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched))"
         class="validation-error">
         <div *ngIf="confirmPassword?.errors?.['required']">
-          Password is required.
+          Confirm Password is required.
         </div>
         <div *ngIf="!confirmPassword?.errors?.['required'] && confirmPassword?.value !== password?.value">
           Confirm Password must be same as Password.
