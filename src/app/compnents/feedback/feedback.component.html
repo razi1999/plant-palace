@@ -2,35 +2,64 @@
     <div class="text">
         FeedBack Form
     </div>
-    <form (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="form-row">
             <div class="input-data">
-                <input type="text" pattern="[a-zA-Z]+" required [(ngModel)]="fName" [ngModelOptions]="{standalone: true}">
+                <input id="fnam" type="text" formControlName="fName">
                 <div class="underline"></div>
-                <label for="">First Name</label>
-
+                <label for="fnam">First Name</label>
+                <div *ngIf="isSubmitted || (fName?.invalid && (fName?.dirty || fName?.touched))"
+                    class="validation-error">
+                    <div *ngIf="fName?.errors?.['required']">
+                        First Name is required.
+                    </div>
+                    <div *ngIf="fName?.errors?.['pattern']">
+                        First Name must include letters only.
+                    </div>
+                </div>
             </div>
             <div class="input-data">
-                <input type="text" pattern="[a-zA-Z]+" required [(ngModel)]="lName" [ngModelOptions]="{standalone: true}">
+                <input id="lname" type="text" formControlName="lName">
                 <div class="underline"></div>
-                <label for="">Last Name</label>
+                <label for="lname">Last Name</label>
+                <div *ngIf="isSubmitted || (lName?.invalid && (lName?.dirty || lName?.touched))"
+                    class="validation-error">
+                    <div *ngIf="lName?.errors?.['required']">
+                        Last Name is required.
+                    </div>
+                    <div *ngIf="lName?.errors?.['pattern']">
+                        Last Name must include letters only.
+                    </div>
+                </div>
             </div>
-
         </div>
         <div class="form-row">
             <div class="input-data">
-                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                <input id="emailAdd" type="text" formControlName="email">
                 <div class="underline"></div>
-                <label>Email Adress</label>
-
+                <label for="emailAdd">Email</label>
+                <div *ngIf="isSubmitted || (email?.invalid && (email?.dirty || email?.touched))"
+                    class="validation-error">
+                    <div *ngIf="email?.errors?.['required']">
+                        Email is required.
+                    </div>
+                    <div *ngIf="email?.errors?.['pattern']">
+                        Email must be in coorect format.
+                    </div>
+                </div>
             </div>
-
         </div>
         <div class="form-row ">
             <div class="input-data textarea">
-                <textarea cols="30" rows="10" required [(ngModel)]="message" [ngModelOptions]="{standalone: true}"></textarea>
+                <textarea id="msg" cols="30" rows="10" formControlName="message"></textarea>
                 <div class="underline"></div>
-                <label>Write your massage</label>
+                <label for="msg">Write your message</label>
+                <div *ngIf="isSubmitted || (message?.invalid && (message?.dirty || message?.touched))"
+                    class="validation-error">
+                    <div *ngIf="message?.errors?.['required']">
+                        Message is required.
+                    </div>
+                </div>
             </div>
         </div>
         <button class="btn btn-default" type="submit" name="button"> Submit
