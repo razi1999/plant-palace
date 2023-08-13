@@ -13,6 +13,7 @@ export class LoginComponent {
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+')]),
     password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]+[a-zA-Z0-9]{5}')])
   });
+  isSubmitted: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -21,6 +22,7 @@ export class LoginComponent {
 
   submit() {
     console.log(this.form.value);
+    this.isSubmitted = true;
     if (this.form.invalid) {
       return;
     }

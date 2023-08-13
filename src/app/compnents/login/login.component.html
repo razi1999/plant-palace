@@ -5,7 +5,7 @@
             <input id="name" type="text" formControlName="name">
             <span></span>
             <label for="name">Username</label>
-            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="validation-error">
+            <div *ngIf="isSubmitted || (name?.invalid && (name?.dirty || name?.touched))" class="validation-error">
                 <div *ngIf="name?.errors?.['required']">
                     Username is required.
                 </div>
@@ -18,7 +18,8 @@
             <input id="passw" type="password" formControlName="password">
             <span></span>
             <label for="passw">Password</label>
-            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="validation-error">
+            <div *ngIf="isSubmitted || (password?.invalid && (password?.dirty || password?.touched))"
+                class="validation-error">
                 <div *ngIf="password?.errors?.['required']">
                     Password is required.
                 </div>
